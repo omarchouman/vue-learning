@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basics</title>
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <style>
+        body{
+            background:#eee;
+            max-width:960px;
+            margin:20px auto;
+        }
+
+        p,h3,ul {
+            margin:0;
+            padding:0;
+        }
+
+        li{
+            list-style: none;
+            background:#fff;
+            margin:20px auto;
+            padding:10px 20px;
+            border-radius:10px;
+            display:flex;
+            align-items:center;
+            justify-content: space-between;
+        }
+
+        li.fav{
+            background:#ff9ed2;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Welcome Vue!</h1>
+        <div v-if="showCars">
+            <h3>{{ title }} - {{ model }}</h3>
+        </div>
+        
+        <button v-on:click="model++">Increase The Model</button>
+        <button @click="model--">Decrease The Model</button>
+        <button @click="changeTitle">Change Title</button>
+        <br/><br/>
+
+        <button @click="toggleShowCars">
+            <span v-if="showCars">Hide Cars</span>
+            <span v-else>Show Cars</span>
+        </button>
+        <br/>
+        <br/>
+        <div v-show="showCars">Currently Showing Cars</div>
+
+        <br/>
+        <br/>
+
+        <ul>
+            <li v-for="car in cars" :class="{ fav: car.isFav }" @click="toggleIsFav(car)">
+                <img :src="car.img" :alt="car.title" width="300" >
+                <h4>{{ car.title }}</h4> 
+                <p>{{ car.model }}</p>
+            </li>
+        </ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
