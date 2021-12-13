@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Create a new project Again!!!",
+      "details": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "title": "Continue developing the new project",
+      "details": "Lorem ipsum",
+      "complete": false
+    },
+    {
+      "title": "Meet Bob",
+      "details": "blah blah blah",
+      "complete": false,
+      "id": 3
+    }
+  ]
+}
